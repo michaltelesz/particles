@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particles", "Particles\Part
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particles.Tests", "Particles.Tests\Particles.Tests.csproj", "{7C930A99-4544-4F4B-B8C3-A78DB496D2FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particles.SandBox", "..\Particles.SandBox\Particles.SandBox.csproj", "{BBD4BF8A-A3B8-424E-821B-C15080D6FF4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C930A99-4544-4F4B-B8C3-A78DB496D2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C930A99-4544-4F4B-B8C3-A78DB496D2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C930A99-4544-4F4B-B8C3-A78DB496D2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD4BF8A-A3B8-424E-821B-C15080D6FF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD4BF8A-A3B8-424E-821B-C15080D6FF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD4BF8A-A3B8-424E-821B-C15080D6FF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD4BF8A-A3B8-424E-821B-C15080D6FF4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

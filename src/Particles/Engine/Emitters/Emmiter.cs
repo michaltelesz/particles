@@ -219,7 +219,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for ColorKeyFrames.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ColorKeyFramesProperty =
-            DependencyProperty.Register("ColorKeyFrames", typeof(ColorKeyFrameCollection), typeof(Emitter));
+            DependencyProperty.Register("ColorKeyFrames", typeof(ColorKeyFrameCollection), typeof(Emitter), new PropertyMetadata(new ColorKeyFrameCollection()));
 
         #endregion
 
@@ -256,16 +256,16 @@ namespace Particles.Engine.Emitters
         /// <param name="particle"></param>
         virtual public void UpdateParticle(Particle particle)
         {
-            //particle.Owner = this;
-            //particle.Mass = ParticleSystem.random.NextDouble(MinMass, MaxMass);
-            //particle.StartOpacity = this.StartOpacity;
-            //particle.EndOpacity = this.EndOpacity;
-            //particle.Force = new Vector(0, 0);
-            //particle.Velocity = new Vector(
-            //    ParticleSystem.random.NextDouble(MinHorizontalVelocity, MaxHorizontalVelocity),
-            //    ParticleSystem.random.NextDouble(MinVerticalVelocity, MaxVerticalVelocity));
-            //particle.LifeSpan = ParticleSystem.random.NextDouble(MinLifeSpan, MaxLifeSpan);
-            //particle.BackgroundColors = this.ColorKeyFrames;
+            particle.Owner = this;
+            particle.Mass = Helpers.RandomNumberGenerator.Instance.NextDouble(MinMass, MaxMass);
+            particle.StartOpacity = this.StartOpacity;
+            particle.EndOpacity = this.EndOpacity;
+            particle.Force = new Vector(0, 0);
+            particle.Velocity = new Vector(
+                Helpers.RandomNumberGenerator.Instance.NextDouble(MinHorizontalVelocity, MaxHorizontalVelocity),
+                Helpers.RandomNumberGenerator.Instance.NextDouble(MinVerticalVelocity, MaxVerticalVelocity));
+            particle.LifeSpan = Helpers.RandomNumberGenerator.Instance.NextDouble(MinLifeSpan, MaxLifeSpan);
+            particle.BackgroundColors = this.ColorKeyFrames;
         }
 
         #endregion

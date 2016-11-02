@@ -45,7 +45,7 @@ namespace Particles.Engine.Controls
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ForcesProperty =
-            DependencyProperty.Register("Forces", typeof(int), typeof(ParticleSystem));
+            DependencyProperty.Register("Forces", typeof(ObservableCollection<Force>), typeof(ParticleSystem));
 
 
 

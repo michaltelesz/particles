@@ -1,0 +1,38 @@
+﻿<Window x:Class="Particles.SandBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Particles.SandBox"
+        xmlns:engine="clr-namespace:Particles.Engine.Controls;assembly=Particles"
+        xmlns:emitter="clr-namespace:Particles.Engine.Emitters;assembly=Particles"
+        xmlns:force="clr-namespace:Particles.Engine.Forces;assembly=Particles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <engine:ParticleSystem Background="Red" x:Name="MyParticleSystem">
+            <engine:ParticleSystem.Emitters>
+                <emitter:PointEmitter X="130" Y="140" MaxParticles="140"
+                                      MinHorizontalVelocity="-1.0"
+                                      MaxHorizontalVelocity="1.0"
+                                      MinVerticalVelocity="-13.0"
+                                      MaxVerticalVelocity="0.0"
+                                      MinLifeSpan="1" MaxLifeSpan="4">
+                    <emitter:PointEmitter.ColorKeyFrames>
+                        <ColorKeyFrameCollection>
+                            <LinearColorKeyFrame Value="Red" KeyTime="0%" />
+                        </ColorKeyFrameCollection>
+                    </emitter:PointEmitter.ColorKeyFrames>
+                </emitter:PointEmitter>
+            </engine:ParticleSystem.Emitters>
+
+            <engine:ParticleSystem.Gravity>
+                <Vector X="0" Y="0.4" />
+            </engine:ParticleSystem.Gravity>
+            <engine:ParticleSystem.Drag>
+                <Vector X="10.0" Y="0.3" />
+            </engine:ParticleSystem.Drag>
+        </engine:ParticleSystem>
+        <Button Width="100" Height="100" Click="Button_Click" />
+    </Grid>
+</Window>
