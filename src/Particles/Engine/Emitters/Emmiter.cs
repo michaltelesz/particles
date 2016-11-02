@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace Particles.Engine.Emitters
 {
@@ -99,6 +100,126 @@ namespace Particles.Engine.Emitters
         // Using a DependencyProperty as the backing store for MinLifeSpan.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinLifeSpanProperty =
             DependencyProperty.Register("MinLifeSpan", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MaxMass
+        {
+            get { return (double)GetValue(MaxMassProperty); }
+            set { SetValue(MaxMassProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MaxMass.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxMassProperty =
+            DependencyProperty.Register("MaxMass", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MinMass
+        {
+            get { return (double)GetValue(MinMassProperty); }
+            set { SetValue(MinMassProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MinMass.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinMassProperty =
+            DependencyProperty.Register("MinMass", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MaxParticleWidth
+        {
+            get { return (double)GetValue(MaxParticleWidthProperty); }
+            set { SetValue(MaxParticleWidthProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MaxParticleWidth.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxParticleWidthProperty =
+            DependencyProperty.Register("MaxParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MinParticleWidth
+        {
+            get { return (double)GetValue(MinParticleWidthProperty); }
+            set { SetValue(MinParticleWidthProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MinParticleWidth.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinParticleWidthProperty =
+            DependencyProperty.Register("MinParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MaxParticleHeight
+        {
+            get { return (double)GetValue(MaxParticleHeightProperty); }
+            set { SetValue(MaxParticleHeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MaxParticleHeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxParticleHeightProperty =
+            DependencyProperty.Register("MaxParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MinParticleHeight
+        {
+            get { return (double)GetValue(MinParticleHeightProperty); }
+            set { SetValue(MinParticleHeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MinParticleHeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinParticleHeightProperty =
+            DependencyProperty.Register("MinParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MaxPositionOffset
+        {
+            get { return (double)GetValue(MaxPositionOffsetProperty); }
+            set { SetValue(MaxPositionOffsetProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MaxPositionOffset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxPositionOffsetProperty =
+            DependencyProperty.Register("MaxPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double MinPositionOffset
+        {
+            get { return (double)GetValue(MinPositionOffsetProperty); }
+            set { SetValue(MinPositionOffsetProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MinPositionOffset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinPositionOffsetProperty =
+            DependencyProperty.Register("MinPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double StartOpacity
+        {
+            get { return (double)GetValue(StartOpacityProperty); }
+            set { SetValue(StartOpacityProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StartOpacity.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StartOpacityProperty =
+            DependencyProperty.Register("StartOpacity", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+
+        public double EndOpacity
+        {
+            get { return (double)GetValue(EndOpacityProperty); }
+            set { SetValue(EndOpacityProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EndOpacity.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EndOpacityProperty =
+            DependencyProperty.Register("EndOpacity", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+
+        public ColorKeyFrameCollection ColorKeyFrames
+        {
+            get { return (ColorKeyFrameCollection)GetValue(ColorKeyFramesProperty); }
+            set { SetValue(ColorKeyFramesProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ColorKeyFrames.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ColorKeyFramesProperty =
+            DependencyProperty.Register("ColorKeyFrames", typeof(ColorKeyFrameCollection), typeof(Emitter));
 
         #endregion
 

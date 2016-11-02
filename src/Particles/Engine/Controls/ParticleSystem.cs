@@ -14,7 +14,7 @@ namespace Particles.Engine.Controls
 {
     public class ParticleSystem : ItemsControl
     {
-        #region Fields
+        #region Private Fields
 
         private bool mIsRunning = false;
         private double mThreshold = 1.0d; // the time the system will not run above
@@ -188,12 +188,66 @@ namespace Particles.Engine.Controls
         /// <param name="time"></param>
         private void ScaleVectors(double time)
         {
+            foreach (Particle particle in Particles)
+            {
+                // If the particle is alive
+                if (particle.IsAlive)
+                {
+                    // calculate the forces acting onthe particle at the current time
+                    particle.Force = ComputeForces(particle, time);
 
+                    // Update the velocity vectors for this particle based on the time
+                    Vector v = particle.Velocity;
+                    double vx = v.X + time * (particle.Force.X / particle.Mass);
+                    double vy = v.Y + time * (particle.Force.Y / particle.Mass);
+                    particle.Velocity = new Vector(vx, vy);
+
+                    // If the particle is not an anchor update its position based on the time
+                    if (!particle.IsAnchor)
+                    {
+                        double px = particle.Position.X + time * particle.Velocity.X;
+                        double py = particle.Position.Y + time * particle.Velocity.Y;
+                        particle.Position = new Point(px, py);
+                    }
+                    particle.LifeSpan -= time; // update the particles lifespan
+                }
+            }
         }
 
-        #endregion
+        /// <summary>
+        /// Calculate all the forces acting on a particle at a given time
+        /// </summary>
+        /// <param name="particle"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        private Vector ComputeForces(Particle particle, double time)
+        {
+            // set all the forces for a particle at a time and position
+            double forceX = (particle.Mass * Gravity.X) - (particle.Velocity.X * Drag.X);
+            double forceY = (particle.Mass * Gravity.Y) - (particle.Velocity.Y * Drag.Y);
 
-        #region Events
+            // If there are spring force connections on this particle then for every connection update
+            // the forces acting upon the particle
+            if (particle.Connections.Count > 0)
+            {
+                foreach (Spring s in particle.Connections)
+                {
+                    // apply the spring force   
+                    Vector force = s.ApplyForce(particle);
+                    forceX += force.X;
+                    forceY += force.Y;
+                }
+            }
+            // for every other force in the global list of forces, apply and update the force.
+            foreach (Force f in Forces)
+            {
+                Vector force = f.ApplyForce(particle);
+                forceX += force.X;
+                forceY += force.Y;
+            }
+            return new Vector(forceX, forceY); // return the force vector.
+        }
+
         #endregion
     }
 }
