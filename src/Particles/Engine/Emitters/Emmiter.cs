@@ -88,7 +88,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MaxLifeSpan.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxLifeSpanProperty =
-            DependencyProperty.Register("MaxLifeSpan", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MaxLifeSpan", typeof(double), typeof(Emitter), new PropertyMetadata(double.MaxValue));
 
 
         public double MinLifeSpan
@@ -99,7 +99,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MinLifeSpan.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinLifeSpanProperty =
-            DependencyProperty.Register("MinLifeSpan", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MinLifeSpan", typeof(double), typeof(Emitter), new PropertyMetadata(double.MaxValue));
 
 
         public double MaxMass
@@ -110,7 +110,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MaxMass.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxMassProperty =
-            DependencyProperty.Register("MaxMass", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MaxMass", typeof(double), typeof(Emitter), new PropertyMetadata(2.0d));
 
 
         public double MinMass
@@ -121,7 +121,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MinMass.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinMassProperty =
-            DependencyProperty.Register("MinMass", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MinMass", typeof(double), typeof(Emitter), new PropertyMetadata(2.0d));
 
 
         public double MaxParticleWidth
@@ -132,7 +132,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MaxParticleWidth.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxParticleWidthProperty =
-            DependencyProperty.Register("MaxParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MaxParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(10.0d));
 
 
         public double MinParticleWidth
@@ -143,7 +143,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MinParticleWidth.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinParticleWidthProperty =
-            DependencyProperty.Register("MinParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MinParticleWidth", typeof(double), typeof(Emitter), new PropertyMetadata(4.0d));
 
 
         public double MaxParticleHeight
@@ -154,7 +154,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MaxParticleHeight.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxParticleHeightProperty =
-            DependencyProperty.Register("MaxParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MaxParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(10.0d));
 
 
         public double MinParticleHeight
@@ -165,7 +165,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MinParticleHeight.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinParticleHeightProperty =
-            DependencyProperty.Register("MinParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MinParticleHeight", typeof(double), typeof(Emitter), new PropertyMetadata(4.0d));
 
 
         public double MaxPositionOffset
@@ -176,7 +176,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MaxPositionOffset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxPositionOffsetProperty =
-            DependencyProperty.Register("MaxPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MaxPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(0.01d));
 
 
         public double MinPositionOffset
@@ -187,7 +187,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for MinPositionOffset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinPositionOffsetProperty =
-            DependencyProperty.Register("MinPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("MinPositionOffset", typeof(double), typeof(Emitter), new PropertyMetadata(-0.01d));
 
 
         public double StartOpacity
@@ -198,7 +198,7 @@ namespace Particles.Engine.Emitters
 
         // Using a DependencyProperty as the backing store for StartOpacity.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StartOpacityProperty =
-            DependencyProperty.Register("StartOpacity", typeof(double), typeof(Emitter), new PropertyMetadata(0d));
+            DependencyProperty.Register("StartOpacity", typeof(double), typeof(Emitter), new PropertyMetadata(0.3d));
 
 
         public double EndOpacity

@@ -23,6 +23,7 @@ namespace Particles.SandBox
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine(MyParticleSystem.Emitters.Count);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

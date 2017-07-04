@@ -18,11 +18,10 @@
                                 <ItemsControl Background="Transparent"
                                               ItemsSource="{TemplateBinding Particles}"
                                               ItemsPanel="{StaticResource ItemsCanvasTemplate}" />
-                                <Canvas x:Name="ParticleCanvas" Background="Transparent" IsItemsHost="True" />
+                                <!--<Canvas x:Name="ParticleCanvas" Background="Transparent" IsItemsHost="True" />-->
                             </Grid>
                         </StackPanel>
                     </Border>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
